@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "permissions": ["storage", "activeTab", "scripting","tabs","storage","fontSettings","contentSettings","debugger"],
+  "host_permissions": ["http://*/*","https://*/*"],
+  "version": "0.1",
+  "name": "Murasaki - Custom CSS Injector",
+  "browser_action": {
+    "default_icon": {              
+      "16": "images/icon16.png",   
+      "24": "images/icon24.png",   
+      "32": "images/icon32.png"    
+    },
+    "default_title": "Inject some custom CSS!",  
+    "default_popup": "popup.html"
+	}
+  
+}

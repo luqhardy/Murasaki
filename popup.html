@@ -6,132 +6,77 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 <style>
-$ruler: 16px;
-$color-red: #AE1100;
-$color-bg: #EBECF0;
-$color-shadow: #BABECC;
-$color-white: #FFF;
-
-    body, html {
-	font-family: "Inter", sans-serif;
-      min-height: 20em;
-      min-width: 20em;
-      background: linear-gradient(109.6deg, rgb(78, 62, 255) 11.2%, rgb(164, 69, 255) 91.1%);
-	  text-align: center;
-    }
-	
-body, p, h1, input, select, textarea, button {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.2px;
-    font-size: $ruler;
-	text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+input {
+  caret-color: red;
 }
 
-div, p {
-  color: $color-shadow;
-  text-shadow: 1px 1px 1px $color-white;
+body {
+  margin: 0;
+  width: 200;
+  height: 200;
+  background: #301934;
+  overflow: hidden;
+  font-family: Inter;
 }
 
 
-form {
-  padding: $ruler;
-  width: $ruler*20;
-  margin: 0 auto;
+.inputs {
+  text-align: left;
+  margin-top: 30px;
 }
 
-.segment {
-  padding: $ruler*2 0;
-  text-align: center;
-}
-
-button, input {
-  border: 0;
-  outline: 0;
-  font-size: $ruler;
-  border-radius: $ruler*20;
-  padding: $ruler;
-  background-color:$color-bg;
-  text-shadow: 1px 1px 0 $color-white;
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
 }
 
 label {
-  display: block;
-  margin-bottom: $ruler*1.5;
-  width: 100%;
+  margin-bottom: 4px;
 }
 
-input {
-  margin-right: $ruler/2;
-  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
-  width: 100%;
-  box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
-  appearance: none;
-  -webkit-appearance: none;
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
 
-  &:focus {
-    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
-  }
+input::placeholder {
+  color: gray;
+}
+
+input, textarea {
+  background: #ecf0f3;
+  position: center;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
 button {
-  color:#61677C;
-  font-weight: bold;
-  box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
-  transition: all 0.2s ease-in-out;
+  color: white;
+  margin-top: 20px;
+  background: #1DA1F2;
+  height: 40px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 600;
-  
-  &:hover {
-    box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
-  }
-  
-  &:active {
-    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
-  }
-  
-  .icon {
-    margin-right: $ruler/2;
-  }
-  
-  &.unit {
-    border-radius: $ruler/2;
-    line-height: 0;
-    width: $ruler*3;
-    height: $ruler*3;
-    display:inline-flex;
-    justify-content: center;
-    align-items:center;
-    margin: 0 $ruler/2;
-    font-size: $ruler*1.2;
-    
-    .icon {
-      margin-right: 0; 
-    }
-  }
-  
-  &.red {
-    display: block;
-    width: 100%;
-    color:$color-red;
-  }
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
 }
 
-.input-group {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
-  label {
-    margin: 0;
-    flex: 1;
-  }
+button:hover {
+  box-shadow: none;
 }
+
   </style>
 </head>
 <body>
-  <h1>Murasaki - Custom CSS Injector</h1>
-  <p> Insert your custom CSS here: </p> 
+  <div class="container">
+    <img src="./murasaki.png" alt="Murasaki" />
+</div>
   <textarea id="customCss"></textarea>
   <br>
   <button id="submitBtn">INJECT!</button>
